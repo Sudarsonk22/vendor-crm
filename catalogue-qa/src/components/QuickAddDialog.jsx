@@ -25,6 +25,25 @@ const QuickAddDialog = ({ title, label, onSave, onClose, withContact = false }) 
       return;
     }
 
+    if (withContact) {
+      if (!email.trim()) {
+        setError("Email is required");
+        return;
+      }
+      if (!/^\S+@\S+\.\S+$/.test(email.trim())) {
+        setError("Enter a valid email");
+        return;
+      }
+      if (!phone.trim()) {
+        setError("Phone number is required");
+        return;
+      }
+      if (!/^[0-9]{10}$/.test(phone.trim())) {
+        setError("Phone number must be 10 digits");
+        return;
+      }
+    }
+
     try {
       setSaving(true);
       setError("");
@@ -46,7 +65,7 @@ const QuickAddDialog = ({ title, label, onSave, onClose, withContact = false }) 
         <p className="quick-sub">This will be available in the dropdown right away.</p>
 
         <label className="quick-label" htmlFor="quick-name">
-          {label} name
+          {label} name {withContact && "*"}
         </label>
         <input
           id="quick-name"
@@ -65,12 +84,12 @@ const QuickAddDialog = ({ title, label, onSave, onClose, withContact = false }) 
               htmlFor="quick-email"
               style={{ marginTop: "14px" }}
             >
-              Email (optional)
+              Email *
             </label>
             <input
               id="quick-email"
               className="quick-input"
-              type="email"
+              type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="vendor@company.com"
@@ -81,14 +100,15 @@ const QuickAddDialog = ({ title, label, onSave, onClose, withContact = false }) 
               htmlFor="quick-phone"
               style={{ marginTop: "14px" }}
             >
-              Phone (optional)
+              Phone *
             </label>
             <input
               id="quick-phone"
               className="quick-input"
               type="text"
+              maxLength={10}
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
               placeholder="9876543210"
             />
           </>
