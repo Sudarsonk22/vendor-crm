@@ -1,0 +1,101 @@
+.quick-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 40, 35, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 16px;
+}
+
+.quick-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.quick-card h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: #1d2a27;
+}
+
+.quick-sub {
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: #6b7b77;
+}
+
+.quick-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #35433f;
+  margin-bottom: 6px;
+}
+
+.quick-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 13px;
+  border: 1px solid #d5dedb;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.quick-input:focus {
+  border-color: #1b6b57;
+  box-shadow: 0 0 0 3px rgba(27, 107, 87, 0.15);
+}
+
+.quick-error {
+  margin-top: 12px;
+  background: #fdecec;
+  color: #b42318;
+  border: 1px solid #f5c2c0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.quick-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.quick-cancel,
+.quick-save {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quick-cancel {
+  background: #ffffff;
+  border: 1px solid #d5dedb;
+  color: #4a5a56;
+}
+
+.quick-save {
+  background: #1b6b57;
+  border: 1px solid #1b6b57;
+  color: #ffffff;
+}
+
+.quick-save:hover {
+  background: #145443;
+}
+
+.quick-save:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

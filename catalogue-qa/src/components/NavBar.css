@@ -1,0 +1,38 @@
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0 32px;
+  height: 56px;
+  background: #ffffff;
+  border-bottom: 1px solid #e1e9e6;
+}
+
+.top-nav-brand {
+  font-weight: 800;
+  font-size: 17px;
+  color: #1b6b57;
+}
+
+.top-nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.top-link {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b6b67;
+}
+
+.top-link:hover {
+  background: #f1f6f4;
+}
+
+.top-link-active {
+  background: #e3f1ec;
+  color: #1b6b57;
+}
