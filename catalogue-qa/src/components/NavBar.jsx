@@ -1,11 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./NavBar.css";
+import logo from "../assets/zenve-logo.png";
 
 const NavBar = () => {
   return (
     <nav className="top-nav">
-      <span className="top-nav-brand">Vendor CRM</span>
+      <div className="brand-wrap">
+        <img src={logo} alt="Zenve Fashion" className="brand-logo" />
+      
+      </div>
 
       <div className="top-nav-links">
         <NavLink

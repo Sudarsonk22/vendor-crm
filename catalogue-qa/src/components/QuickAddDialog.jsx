@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getErrorMessage } from "../services/api";
-import "./QuickAddDialog.css";
+
 
 const QuickAddDialog = ({ title, label, onSave, onClose, withContact = false }) => {
   const [name, setName] = useState("");

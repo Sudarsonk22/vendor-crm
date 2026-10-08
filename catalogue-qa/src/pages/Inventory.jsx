@@ -154,8 +154,8 @@ const Inventory = () => {
 
       <div className="inv-header">
         <span className="inv-eyebrow">VENDOR CRM</span>
-        <h1>Inventory</h1>
-        <p>Track stock levels and every change made to them.</p>
+        <h1>INVENTORY</h1>
+        
       </div>
 
       {lowStock.length > 0 && (
@@ -256,6 +256,7 @@ const Inventory = () => {
               <table className="inv-table">
                 <thead>
                   <tr>
+                    <th>IMAGE</th>
                     <th>PRODUCT</th>
                     <th>CATEGORY</th>
                     <th>VENDOR</th>
@@ -268,6 +269,19 @@ const Inventory = () => {
                 <tbody>
                   {products.map((product) => (
                     <tr key={product.id}>
+                      <td>
+                        {product.imageUrl ? (
+                          <img
+                            src={product.imageUrl}
+                            alt={product.name}
+                            className="inv-img"
+                          />
+                        ) : (
+                          <div className="inv-img inv-img-empty">
+                            {product.name.charAt(0).toUpperCase()}
+                          </div>
+                        )}
+                      </td>
                       <td>
                         <div className="inv-name">{product.name}</div>
                         <div className="inv-sku">{product.sku}</div>
